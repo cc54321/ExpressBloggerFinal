@@ -6,6 +6,8 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "date": "^2.0.2",
@@ -14,10 +16,12 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^9.0.0",
     "mongodb": "^4.14.0",
     "mongoose": "^7.0.2",
     "morgan": "~1.9.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"

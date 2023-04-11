@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
 //load environment variables from .env (.env is the default file)
 require("dotenv").config();
 
@@ -22,6 +23,18 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+//allow cross origin requests (this is for production)
+//production code = code that hasn't been released
+app.use(cors({ origin: true, credentials: true}))
+app.options("*", cors());
+
+//middle ware 
+// allows us to modify POST requests
+// give us extra info
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
 
 //set up logger and cookie parser 
 app.use(logger('dev'));
